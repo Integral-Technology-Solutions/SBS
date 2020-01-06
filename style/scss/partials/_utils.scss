@@ -1,0 +1,18 @@
+$color-orange: #EB770B;
+$background-color-orange: #E87724;
+$color-darkgrey: #272727;
+
+.orange-background{
+	background-color: $background-color-orange;
+	color: $color-darkgrey;
+}
+
+.darkgrey-background{
+	background-color: $color-darkgrey;
+	color: white;
+}
+
+.white-background{
+	background-color: $color-darkgrey;
+	color: $color-darkgrey;
+}

@@ -1,0 +1,583 @@
+/* Based on bootstrap value */
+/*Based on ultra high definition monitor resolutions*/
+.orange-background {
+  background-color: #E87724;
+  color: #272727;
+}
+
+.darkgrey-background {
+  background-color: #272727;
+  color: white;
+}
+
+.white-background {
+  background-color: #272727;
+  color: #272727;
+}
+
+@font-face {
+  font-family: "Myriad Pro";
+  font-weight: 700;
+  src: url("/media/1uskgpfv/myriadpro-bold.otf") format("opentype");
+}
+@font-face {
+  font-family: "Myriad Pro";
+  font-weight: 500;
+  font-style: italic;
+  src: url("/media/3bipfdfa/myriadpro-it.otf") format("opentype");
+}
+@font-face {
+  font-family: "Myriad Pro";
+  font-weight: 100;
+  src: url("/media/1usotoz5/myriadpro-light.otf") format("opentype");
+}
+@font-face {
+  font-family: "Myriad Pro";
+  font-weight: 500;
+  src: url("/media/zwphkoga/myriadpro-regular.otf") format("opentype");
+}
+@font-face {
+  font-family: "Myriad Pro";
+  font-weight: 600;
+  src: url("/media/t4laa1kn/myriadpro-semibold.otf") format("opentype");
+}
+html {
+  font-size: 14px;
+}
+@media (min-width: 768px) {
+  html {
+    font-size: 11px;
+  }
+}
+@media (min-width: 992px) {
+  html {
+    font-size: 13px;
+  }
+}
+@media (min-width: 1200px) {
+  html {
+    font-size: 13px;
+  }
+}
+
+body {
+  overflow: hidden;
+}
+
+p {
+  font-family: Myriad Pro;
+  font-weight: 400;
+  font-size: 1.25em;
+  line-height: 1.5em;
+}
+
+a {
+  text-decoration: inherit;
+  color: inherit;
+  font-size: inherit;
+  font-family: inherit;
+}
+a:hover {
+  text-decoration: inherit;
+  color: inherit;
+}
+
+body {
+  min-height: 100vh;
+}
+body > .container-fluid {
+  min-height: 100vh;
+}
+
+header {
+  position: fixed;
+  z-index: 100;
+  top: 0;
+  left: 0;
+  margin: 0;
+  width: 100%;
+  height: 8em;
+}
+header #logo {
+  max-height: 100%;
+  margin-top: -0.8em;
+}
+header.scrolled {
+  background-color: black;
+}
+header.scrolled #menu-hover {
+  background-color: black !important;
+}
+@media (min-width: 768px) {
+  header.scrolled .submenu {
+    background-color: black !important;
+    padding-left: 100vw;
+    left: -100vw;
+    top: 4rem;
+  }
+}
+header #menu {
+  position: relative;
+}
+@media (max-width: 768px) {
+  header #menu {
+    order: 1;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    background-color: black;
+    width: 100vw;
+    left: 0;
+    overflow: scroll;
+    transition: 0.2s;
+    max-width: 0;
+    max-height: calc(100vh - 11em);
+  }
+  header #menu.show {
+    max-width: 100vw;
+    transition: 1s;
+  }
+  header #menu .submenu {
+    position: relative !important;
+    padding-left: 2em !important;
+    max-height: 100vh !important;
+  }
+}
+header #menu #menu-hover {
+  position: absolute;
+  bottom: -2em;
+  left: 0;
+  width: 0;
+  height: 0;
+  z-index: -1;
+  transition: height 1s, width 1s;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+header #menu .menu-item {
+  position: relative;
+}
+header #menu .menu-item .submenu {
+  position: absolute;
+  max-height: 0;
+  transition: 0.2s;
+  overflow: hidden;
+  background-color: rgba(0, 0, 0, 0.8);
+  width: 100vw;
+  margin-top: 1px;
+}
+@media (min-width: 768px) {
+  header #menu .menu-item .submenu {
+    width: 200vw;
+  }
+}
+header #menu .menu-item .submenu p {
+  margin-top: 1em;
+}
+header #menu .menu-item:hover .submenu {
+  max-height: 100vh;
+  transition: 1s;
+}
+header #menu:hover {
+  border-bottom: solid #EB770B 1px;
+}
+header #menu:hover #menu-hover {
+  width: 100vw;
+  height: 100vh;
+}
+header #menu p {
+  margin: 0.5em;
+  color: white;
+  padding: 0 0.5em 0 0.5em;
+  font-size: 1.1em;
+  letter-spacing: 0.2em;
+}
+header #menu p:hover {
+  color: #EB770B;
+}
+header #menu > a > img {
+  height: 2.1em;
+  margin-left: 1em;
+}
+header #netstream-logo .hover {
+  display: none !important;
+}
+header #netstream-logo:hover .normal {
+  display: none !important;
+}
+header #netstream-logo:hover .hover {
+  display: flex !important;
+}
+
+#header {
+  color: white;
+  position: relative;
+  padding-top: 8em;
+}
+#header h1 {
+  font-size: 3.25em;
+  text-shadow: 0 7px 10px #00000080;
+  font-family: Myriad Pro;
+  font-weight: 700;
+}
+@media (min-width: 768px) {
+  #header h1 {
+    font-size: 5.25em;
+  }
+}
+@media (min-width: 992px) {
+  #header h1 {
+    font-size: 6.25em;
+  }
+}
+#header h2 {
+  font-size: 1.5em;
+  line-height: 1.4em;
+  text-shadow: 0 5px 10px #000000;
+  font-family: Myriad Pro;
+  font-weight: 600;
+}
+@media (min-width: 768px) {
+  #header h2 {
+    font-size: 2.25em;
+  }
+}
+#header img#background-header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  object-position: center bottom;
+}
+#header .overlay-content {
+  z-index: 2;
+  margin-bottom: 10em;
+}
+
+#meters #meter-units {
+  flex-wrap: wrap;
+}
+#meters #meter-units > div {
+  width: 50%;
+}
+@media (min-width: 768px) {
+  #meters #meter-units {
+    flex-wrap: nowrap;
+    margin-top: -6em;
+  }
+  #meters #meter-units > div {
+    position: relative;
+    width: 20%;
+  }
+  #meters #meter-units > div:nth-child(1), #meters #meter-units > div:nth-child(4) {
+    margin-top: -2em;
+  }
+}
+#meters #meter-units .meter-unit-icon img {
+  width: 8em;
+  height: 8em;
+  object-fit: contain;
+}
+#meters #meter-units .meter-unit-icon img:first-child {
+  display: block;
+}
+#meters #meter-units .meter-unit-icon img:last-child {
+  display: none;
+}
+#meters #meter-units .meter-unit-icon:hover img:first-child {
+  display: none;
+}
+#meters #meter-units .meter-unit-icon:hover img:last-child {
+  display: block;
+}
+#meters #meter-units .meter-title {
+  font-weight: 700;
+}
+#meters #meter-units .meter-description {
+  font-weight: 100;
+}
+#meters .meters-description {
+  font-size: 2.25em;
+  font-weight: 100;
+  margin-top: 4em;
+}
+
+#gain-value {
+  background-color: #272727;
+  color: white;
+}
+#gain-value h3 {
+  font-weight: 2.25em;
+  font-weight: 500;
+}
+@media (min-width: 768px) {
+  #gain-value .row-item {
+    width: 33%;
+  }
+}
+#gain-value .row-item p {
+  font-weight: 700;
+  letter-spacing: 0.1em;
+}
+#gain-value hr {
+  border-top: solid 1px #EB770B;
+  width: 33%;
+  margin: auto;
+  margin-bottom: 3rem;
+}
+
+#numbers img {
+  z-index: -1;
+}
+@media (min-width: 768px) {
+  #numbers .number {
+    max-width: 33%;
+  }
+}
+#numbers .number p:first-child {
+  color: white;
+  font-size: 6.25em;
+  font-weight: 700;
+}
+#numbers .number p:last-child {
+  font-size: 1.5em;
+  color: white;
+  font-weight: 700;
+}
+
+.info a {
+  border-radius: 0.5rem;
+  text-decoration: none;
+  font-weight: 600;
+}
+.info p.title {
+  font-size: 1.875em;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+}
+.info.white {
+  color: #272727;
+  background-color: white;
+}
+.info.white a {
+  border: solid 2px #EB770B;
+  color: #272727;
+}
+.info.white a:hover {
+  background-color: #EB770B;
+  color: white;
+}
+.info.white hr {
+  border: solid 2px #EB770B;
+  margin: 0;
+  width: 4em;
+}
+.info.black {
+  color: white;
+  background-color: #272727;
+}
+.info.black hr {
+  border: solid 2px #EB770B;
+  margin: 0;
+  width: 4em;
+}
+.info.black a {
+  border: solid 2px #EB770B;
+  color: white;
+}
+.info.black a:hover {
+  background-color: #EB770B;
+  color: white;
+}
+.info.orange {
+  color: #272727;
+  background-color: #E87724;
+}
+.info.orange hr {
+  border: solid 2px #272727;
+  margin: 0;
+  width: 4em;
+}
+.info.orange a {
+  border: solid 2px #272727;
+  color: white;
+}
+.info.orange a:hover {
+  background-color: #272727;
+  color: white;
+}
+.info .content > div:first-child {
+  padding: 1em;
+}
+@media (min-width: 768px) {
+  .info .icon-title {
+    margin-right: auto;
+  }
+  .info.even div:first-child {
+    order: 1;
+  }
+  .info.even div:last-child {
+    order: 2;
+  }
+  .info.even .content {
+    justify-content: flex-end;
+  }
+  .info.even .content > div:first-child {
+    width: 100%;
+    padding: 5em 5em 5em 30%;
+  }
+  .info.odd div:first-child {
+    order: 2;
+  }
+  .info.odd div:last-child {
+    order: 1;
+  }
+  .info.odd .icon-title {
+    margin-left: auto;
+  }
+  .info.odd .content > div:first-child {
+    padding: 5em 30% 5em 5em;
+  }
+  .info .content, .info .img {
+    width: 50%;
+  }
+}
+
+#integrated-metering-platform h3 {
+  font-size: 2.25em;
+  font-weight: 100;
+}
+#integrated-metering-platform #platforms > a {
+  width: 100%;
+}
+@media (min-width: 768px) {
+  #integrated-metering-platform #platforms > a {
+    width: 50%;
+  }
+}
+#integrated-metering-platform #platforms > a .platform {
+  width: 100%;
+}
+#integrated-metering-platform #platforms > a .platform > div {
+  background-color: rgba(0, 0, 0, 0.5);
+  transition: background-color 0.6s;
+  border-radius: 1em;
+  position: relative;
+  overflow: hidden;
+}
+#integrated-metering-platform #platforms > a .platform > div:hover {
+  cursor: pointer;
+  background-color: rgba(0, 0, 0, 0);
+}
+#integrated-metering-platform #platforms > a .platform > div img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  object-fit: cover;
+  z-index: -1;
+}
+#integrated-metering-platform #platforms > a .platform > div h4 {
+  margin: 6rem 10%;
+  letter-spacing: 0.2em;
+  padding: 0.8rem;
+  color: white;
+  border: solid 1px;
+  width: auto;
+  background-color: rgba(0, 0, 0, 0.6);
+  border-radius: 1rem;
+}
+
+#products-certifications h3 {
+  font-size: 1.5em;
+  font-weight: 600;
+  color: #EB770B;
+}
+#products-certifications hr {
+  border-color: #EB770B;
+}
+#products-certifications img {
+  height: 3rem;
+  margin: 1rem 1.8rem;
+  filter: grayscale(1);
+  cursor: pointer;
+}
+#products-certifications img:hover {
+  filter: none;
+}
+@media (min-width: 768px) {
+  #products-certifications .row > div {
+    width: 50%;
+  }
+}
+
+footer {
+  background-color: black;
+  color: white;
+  padding-bottom: 5.5em;
+  background-image: url(/media/ewtjctkm/footer_graphic.svg);
+  background-repeat: no-repeat;
+  background-position: bottom;
+  background-size: contain;
+}
+footer p {
+  font-family: Myriad Pro;
+  font-weight: 100;
+}
+footer a {
+  color: inherit !important;
+  font-family: inherit !important;
+  text-decoration: none !important;
+}
+footer .logo {
+  height: 3.25em;
+}
+footer .icons img {
+  height: 2.25em;
+  width: 2.25em;
+  margin: 0.3em;
+}
+footer p {
+  margin: 0;
+}
+footer p.phone {
+  font-size: 2.3em;
+  font-weight: 500;
+  color: #EB770B;
+}
+footer p.service-help {
+  margin-top: 1rem;
+  padding: 0.3rem 0.2rem;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  color: white;
+  border: solid 2px #EB770B;
+  text-align: center;
+}
+footer p.service-help a {
+  width: 100%;
+  height: 100%;
+  text-decoration: none;
+}
+footer #solutionFor p {
+  line-height: 1.5em;
+}
+
+.img-cover {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.top-0 {
+  top: 0;
+}
+
+.scroll {
+  height: 100vh;
+  overflow: scroll;
+}
+
+/*# sourceMappingURL=main.css.map */

@@ -1,0 +1,700 @@
+@import './partials/_screen';
+@import './partials/_utils';
+
+@font-face {
+font-family: "Myriad Pro";
+font-weight:700;
+src: url("/media/1uskgpfv/myriadpro-bold.otf") format("opentype")
+}
+
+@font-face {
+font-family: "Myriad Pro";
+font-weight:500;
+font-style: italic;
+src: url("/media/3bipfdfa/myriadpro-it.otf") format("opentype")
+}
+
+@font-face {
+font-family: "Myriad Pro";
+font-weight:100;
+src: url("/media/1usotoz5/myriadpro-light.otf") format("opentype")
+}
+
+@font-face {
+font-family: "Myriad Pro";
+font-weight:500;
+src: url("/media/zwphkoga/myriadpro-regular.otf") format("opentype")
+}
+
+@font-face {
+font-family: "Myriad Pro";
+font-weight:600;
+src: url("/media/t4laa1kn/myriadpro-semibold.otf") format("opentype")
+}
+
+
+
+html{
+
+  font-size:14px; 
+
+  @include md{
+  	font-size: 11px;
+  }
+
+  @include lg{
+  	font-size: 13px;
+  }
+  @include xl{
+  	font-size:13px;
+  }
+}
+
+body{
+	overflow: hidden;
+}
+
+p{
+	font-family: Myriad Pro;
+	font-weight: 400;
+	font-size: 1.25em;
+	line-height: 1.5em;
+}
+
+a{
+	text-decoration: inherit ;
+    color: inherit ;
+    font-size: inherit;
+    font-family: inherit;
+
+    &:hover{
+    	text-decoration: inherit ;
+    	color: inherit ;
+    }
+}
+
+body{
+	min-height: 100vh;
+
+	& > .container-fluid{
+		min-height: 100vh;
+	}
+}
+
+header{
+    position: fixed;
+    z-index: 100;
+    top: 0;
+    left: 0;
+    margin: 0;
+    width: 100%;
+    height: 8em;
+
+
+    #logo{
+    	max-height: 100%; 
+    	margin-top: -0.8em;
+    }
+
+    &.scrolled{
+    	background-color: black;
+
+    	#menu-hover{
+    		background-color: black !important;
+    	}
+
+    	@include md{
+    		.submenu{
+				background-color: black !important;
+			    padding-left: 100vw;
+			    left: -100vw;
+			    top: 4rem;
+			}
+    	}
+		
+    }
+
+    #menu{
+
+	 	@include sm-only{
+	    	    order: 1;
+			    flex-direction: column;
+			    position: absolute;
+			    top: 100%;
+			    background-color: black;
+			    width: 100vw;
+			    left: 0;
+			    overflow: scroll;
+			    transition: 0.2s;
+			    max-width: 0;
+
+			    max-height: calc(100vh - 11em);
+
+			    &.show{
+			    	max-width: 100vw;
+			    	transition: 1s;
+			    }
+
+			    .submenu{
+			        position: relative !important; 
+			        padding-left: 2em !important;
+			        max-height: 100vh !important;
+			    }
+
+	    }
+
+    	position: relative;
+
+    	#menu-hover{
+    		position: absolute;
+		    bottom: -2em;
+		    left: 0;
+		    width: 0;
+		    height: 0;
+		    z-index: -1;
+		    transition: height 1s, width 1s;
+		    background-color: rgba(0,0,0,0.8);
+    	}
+
+    	.menu-item{
+    		position: relative;
+
+    		.submenu{
+    			position: absolute;
+			    max-height: 0;
+			    transition: 0.2s;
+			    overflow: hidden;
+			    background-color: rgba(0,0,0,0.8);
+			    width: 100vw;		
+			    @include md{
+			    	width: 200vw;
+			    }
+			    margin-top: 1px;
+			    p{
+			    	margin-top: 1em;
+			    }	   
+    		}
+
+    		&:hover{
+    			.submenu{
+					max-height: 100vh;
+					transition: 1s;
+    			}
+    		}
+
+    	}
+
+    	&:hover{
+		    
+			border-bottom: solid $color-orange 1px;
+    		#menu-hover{
+			    width: 100vw;
+			    height: 100vh;
+			}
+    	}
+
+
+		p { 
+			margin: 0.5em;
+			color: white;
+			padding: 0 0.5em 0 0.5em;
+			font-size: 1.1em;
+			letter-spacing: 0.2em;
+
+			&:hover{
+				color: $color-orange;
+			}
+		}
+
+		& > a > img{
+			height: 2.1em;
+			margin-left: 1em;
+		}
+	}
+
+	#netstream-logo{
+		.hover{
+			display: none !important;
+		}
+
+		&:hover{
+			.normal{
+				display: none !important;
+			}
+			.hover{
+				display: flex !important;
+			}
+		}
+	}
+
+}
+
+#header{
+
+	color: white;
+	position: relative;
+	padding-top: 8em;
+
+	h1{
+
+		font-size: 3.25em;
+		@include md{
+			font-size: 5.25em;
+		}
+		@include lg{
+			font-size: 6.25em;
+		}
+		text-shadow: 0 7px 10px #00000080; 
+		font-family: Myriad Pro;
+		font-weight: 700;
+	}
+
+	h2{
+
+		font-size: 1.5em;
+		line-height: 1.4em;
+
+		@include md{
+			font-size: 2.25em;
+		}
+		text-shadow: 0 5px 10px #000000;
+		font-family: Myriad Pro;
+		font-weight: 600;
+	}
+
+
+	img#background-header{
+		position: absolute;
+		top: 0;
+	    left: 0;
+	    height: 100%;
+	    width: 100%;
+	    object-fit: cover;
+	    object-position: center bottom;
+	}
+
+	.overlay-content{
+		z-index: 2;
+		margin-bottom: 10em;
+	}
+}
+
+#meters{
+
+	#meter-units{
+
+		flex-wrap: wrap;
+		& > div {
+			width: 50%;
+		} 
+
+		@include md{
+			flex-wrap: nowrap;
+			margin-top: -6em;
+
+			& > div{
+				position: relative;
+				width: 20%;
+			}
+
+			& > div:nth-child(1), & > div:nth-child(4),{
+				margin-top: -2em;
+			}
+		}
+
+		.meter-unit-icon{
+
+			img{
+				width: 8em;
+			    height: 8em;
+			    object-fit: contain;
+			}
+
+			img:first-child{
+				display: block;
+			}
+
+			img:last-child{
+				display: none;
+			}
+
+			&:hover{
+				img:first-child{
+					display: none;
+				}
+
+				img:last-child{
+					display: block;
+				}
+			}
+		}
+
+		.meter-title{
+			font-weight: 700;
+		}
+
+		.meter-description{
+			font-weight: 100; 
+		}
+	}
+
+	.meters-description{
+		font-size: 2.25em;
+		font-weight: 100; 
+		margin-top: 4em;
+	}
+}
+
+#gain-value{
+	background-color: $color-darkgrey;
+	color: white;
+
+	h3{
+		font-weight: 2.25em;
+		font-weight: 500;
+	}
+
+	.row-item{
+		@include md{
+			width: 33%;
+		}
+		
+		p{
+			font-weight: 700;
+			letter-spacing: 0.1em;
+		}
+	}
+
+	hr{
+		border-top: solid 1px $color-orange;
+		width: 33%;
+		margin: auto;
+		margin-bottom: 3rem;
+	}
+}
+
+#numbers{
+	img{
+		z-index: -1;
+	}
+
+	.number{
+		@include md{
+			max-width: 33%;
+		}
+
+		p:first-child{
+			color: white;
+			font-size: 6.25em;
+			font-weight: 700;
+		}
+
+		p:last-child{
+			font-size: 1.5em;
+			color: white;
+			font-weight: 700;
+		}
+	}
+}
+
+.info{
+
+    a{
+		border-radius: 0.5rem;
+		text-decoration: none;
+		font-weight: 600;
+	}
+
+	p.title{
+		font-size: 1.875em;
+		font-weight: 600;
+		letter-spacing: 0.1em;
+	}
+
+	&.white{
+		color: $color-darkgrey;
+		background-color: white;
+
+		a{
+			border: solid 2px $color-orange;
+			color: $color-darkgrey;
+
+			&:hover{
+				background-color: $color-orange;
+    			color: white;
+			}
+		}
+
+		hr{
+			border: solid 2px $color-orange;
+			margin: 0;
+			width: 4em;
+		}
+	}
+
+	&.black{
+		color: white;
+		background-color: $color-darkgrey;
+
+		hr{
+			border: solid 2px  $color-orange;
+			margin: 0;
+			width: 4em;
+		}
+
+		a{
+			border: solid 2px  $color-orange;
+			color: white;
+
+			&:hover{
+				background-color: $color-orange;
+    			color: white;
+			}
+			
+		}
+	}
+
+	&.orange{
+		color: $color-darkgrey;
+		background-color: $background-color-orange;
+
+		hr{
+			border: solid 2px $color-darkgrey;
+			margin: 0;
+			width: 4em;
+		}
+
+		a{
+			border: solid 2px $color-darkgrey;
+			color: white;
+
+			&:hover{
+				background-color: $color-darkgrey;
+    			color: white;
+			}
+		}
+	}
+
+	.content{
+			& > div:first-child{
+				padding: 1em;
+			}
+	}
+		
+	@include md{
+		.icon-title{
+				margin-right: auto;
+		}
+
+
+		&.even{
+				div:first-child{
+					order: 1;
+				}
+				div:last-child{
+					order: 2;
+				}
+
+			.content{
+				justify-content: flex-end;
+				& > div:first-child{
+					width: 100%;
+					padding: 5em 5em 5em 30%;
+				}
+			}
+		}
+
+		&.odd{
+			div:first-child{
+				order: 2;
+			}
+			div:last-child{
+				order: 1;
+			}
+
+			.icon-title{
+				margin-left: auto;
+			}
+
+			.content{
+				& > div:first-child{
+					padding: 5em 30% 5em 5em;
+				}
+			}
+		}
+
+
+		.content,.img {
+			width: 50%;
+		}
+	}
+
+}
+
+#integrated-metering-platform{
+
+	h3{
+		font-size: 2.25em;
+		font-weight: 100;
+	}
+
+	#platforms{
+
+		& > a{
+			width: 100%;
+			@include md{
+				width: 50%;
+			}
+			 .platform {
+				width: 100%;
+				& > div{
+					background-color: rgba(0,0,0,0.5);
+					transition: background-color 0.6s;
+					border-radius:1em;
+					position: relative;
+					overflow: hidden;
+
+					&:hover{
+						cursor: pointer;
+						background-color: rgba(0,0,0,0);
+					}
+
+					img{
+						position:absolute;
+						width: 100%;
+						height: 100%;
+						top: 0;
+						left: 0;
+						object-fit: cover;
+						z-index: -1;
+					}
+
+					h4{
+					    margin: 6rem 10%;
+					    letter-spacing: 0.2em;
+					    padding: 0.8rem;
+					    color: white;
+					    border: solid 1px;
+					    width: auto;
+					    background-color: rgba(0,0,0,0.6);
+					    border-radius: 1rem;
+					}
+				}
+			}
+			
+		}
+	}		
+}
+
+#products-certifications{
+	h3{
+		font-size: 1.5em;
+		font-weight: 600;
+		color: $color-orange;
+	}
+
+	hr{
+		border-color: $color-orange;
+	}
+
+	img{
+		height: 3rem;
+    	margin: 1rem 1.8rem;
+    	filter: grayscale(1);
+    	cursor: pointer;
+
+    	&:hover{
+    		filter: none;
+    	}
+	}
+
+	& .row {
+		& > div {
+			@include md{
+				width: 50%;
+			}
+		}
+	}
+}
+
+footer{
+	background-color: black;
+	color: white;
+	padding-bottom: 5.5em;
+
+	p{
+		font-family: Myriad Pro;
+		font-weight: 100;
+	}
+
+	a{
+		color: inherit !important;
+		font-family: inherit !important;
+		text-decoration: none !important;
+	}
+
+	.logo{
+		height: 3.25em;
+	}
+
+	.icons{
+		
+		img{
+			height: 2.25em;
+		    width: 2.25em;
+		    margin: 0.3em;
+		}
+	}
+
+	p{
+		margin:0;
+	}
+
+	p.phone{
+		font-size: 2.3em;
+		font-weight: 500;
+		color: $color-orange;
+	}
+
+	p.service-help{
+		margin-top: 1rem;
+		padding: 0.3rem 0.2rem;
+		border-radius: 0.5rem;
+		font-weight: 600;
+		color: white;
+		border: solid 2px $color-orange;
+		text-align: center;
+
+		a{
+			width: 100%;
+			height: 100%;
+			text-decoration: none;
+		}
+	}
+
+    background-image: url(/media/ewtjctkm/footer_graphic.svg);
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-size: contain;
+
+	#solutionFor{
+		p{
+			line-height: 1.5em;
+		}
+	}
+}
+
+.img-cover{
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+.top-0{
+	top:0;
+}
+
+.scroll{
+	height: 100vh;
+	overflow: scroll;
+}

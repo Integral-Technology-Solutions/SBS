@@ -1,0 +1,74 @@
+/* Based on bootstrap value */
+$screen-sm-min		: 576px ; 
+$screen-sm-width	: 540px;
+
+$screen-md-min		: 768px ;
+$screen-md-width	: 720px;
+
+$screen-lg-min		: 992px;
+$screen-lg-width	: 960px;
+
+$screen-xl-min		: 1200px;
+$screen-xl-width	: 1140px;
+
+/*Based on ultra high definition monitor resolutions*/
+$screen-xxl-min     : 2000px;
+$screen-xxl-width   : 1980px;
+
+$screen-xxxl-min    : 2600px;
+$screen-xxxl-width  : 2560px;
+
+$screen-wuhd-min    : 3900px;
+$screen-wuhd-width  : 3840px;
+
+@mixin xs-only{   
+  @media (max-width: #{$screen-sm-min}) {
+    @content;
+  }
+}
+
+@mixin sm-only{   
+  @media (max-width: #{$screen-md-min}) {
+    @content;
+  }
+}
+
+@mixin sm{
+    @media (min-width: #{$screen-sm-min}) {
+    @content;
+  }
+}
+
+@mixin md {
+  @media (min-width: #{$screen-md-min}) {
+    @content;
+  }
+}
+
+@mixin lg {
+  @media (min-width: #{$screen-lg-min}) {
+    @content;
+  }
+}
+
+@mixin xl {
+  @media (min-width: #{$screen-xl-min}) {
+    @content;
+  }
+}
+@mixin xxl{
+  @media (min-width: #{$screen-xxl-min}) {
+    @content;
+  }
+}
+
+@mixin xxxl {
+  @media (min-width: #{$screen-xxxl-min}) {
+    @content;
+  }
+}
+@mixin wuhd {
+  @media (min-width: #{$screen-wuhd-min}) {
+    @content;
+  }
+}

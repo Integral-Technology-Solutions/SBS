@@ -1,0 +1,18 @@
+$color-orange: #EB770B;
+
+header{
+	background-color: black !important;
+}
+
+header ~ div {
+	padding-top: 8em;
+}
+
+hr{
+	border-color: $color-orange;
+}
+
+h1{
+	font-weight: 600;
+    letter-spacing: 0.1em;
+}
